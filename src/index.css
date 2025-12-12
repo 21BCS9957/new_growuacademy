@@ -1,0 +1,349 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme with vibrant yellow accents */
+    --background: 220 13% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Vibrant yellow primary */
+    --primary: 48 100% 67%;
+    --primary-foreground: 220 13% 9%;
+
+    /* Dark secondary tones */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 55%;
+
+    /* Bright accent */
+    --accent: 48 100% 67%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
+    --ring: 48 100% 67%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(220, 13%, 9%), hsl(220, 13%, 15%));
+    --accent-glow: 0 0 30px hsl(48 100% 67% / 0.3);
+    --text-shadow: 2px 2px 4px hsl(220 13% 9% / 0.8);
+    
+    /* Sidebar colors */
+    --sidebar-background: 220 13% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 48 100% 67%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 220 13% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 48 100% 67%;
+  }
+
+  .dark {
+    /* Keep same dark theme for consistency */
+    --background: 220 13% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 48 100% 67%;
+    --primary-foreground: 220 13% 9%;
+
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 55%;
+
+    --accent: 48 100% 67%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 18%;
+    --ring: 48 100% 67%;
+
+    --sidebar-background: 220 13% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 48 100% 67%;
+    --sidebar-primary-foreground: 220 13% 9%;
+    --sidebar-accent: 220 13% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 20%;
+    --sidebar-ring: 48 100% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-medium;
+    background: var(--hero-gradient);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  .hero-text {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-none;
+    text-shadow: var(--text-shadow);
+  }
+
+  .accent-text {
+    @apply text-primary;
+    filter: drop-shadow(var(--accent-glow));
+  }
+
+  .stats-number {
+    @apply text-4xl md:text-5xl lg:text-6xl font-black text-primary;
+    filter: drop-shadow(var(--accent-glow));
+  }
+}
+
+/* Lenis smooth scroll base styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Scroll-triggered animations */
+.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes stripe {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-fast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee-slow 50s linear infinite;
+}
+
+.animate-marquee-fast {
+  animation: marquee-fast 15s linear infinite;
+}
+
+.animate-marquee.reverse,
+.animate-marquee-slow.reverse,
+.animate-marquee-fast.reverse {
+  animation-direction: reverse;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Staggered animations for multiple elements */
+.animate-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.animate-stagger.animate-in > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-stagger.animate-in > *:nth-child(1) { transition-delay: 0.1s; }
+.animate-stagger.animate-in > *:nth-child(2) { transition-delay: 0.2s; }
+.animate-stagger.animate-in > *:nth-child(3) { transition-delay: 0.3s; }
+.animate-stagger.animate-in > *:nth-child(4) { transition-delay: 0.4s; }
+.animate-stagger.animate-in > *:nth-child(5) { transition-delay: 0.5s; }
+.animate-stagger.animate-in > *:nth-child(6) { transition-delay: 0.6s; }
+
+/* Parallax effects */
+.parallax-slow {
+  transform: translateY(var(--scroll-y, 0) * 0.5);
+}
+
+.parallax-fast {
+  transform: translateY(var(--scroll-y, 0) * -0.5);
+}
+
+/* Smooth reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Scale animations */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease-out;
+}
+
+.scale-in.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Slide animations */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-text {
+    line-height: 0.9;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better spacing on mobile */
+  .space-y-8 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
