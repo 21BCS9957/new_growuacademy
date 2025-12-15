@@ -16,15 +16,11 @@ const ClassroomSection = () => {
         
         {/* Header */}
         <div ref={contentRef as any} className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
             <span className="gradient-text">
               Where Learning Happens
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Step into our state-of-the-art learning environment where creativity meets technology. 
-            Experience hands-on training in our professional-grade classrooms.
-          </p>
         </div>
 
 
@@ -89,7 +85,7 @@ const ClassroomSection = () => {
               </div>
 
               {/* Image 4 */}
-              <div className="relative w-[400px] sm:w-[500px] lg:w-[600px] h-full mx-4 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-[180px] sm:w-[500px] lg:w-[600px] h-full mx-2 sm:mx-4 rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src={classroomImg4} 
                   alt="Instructor teaching video editing techniques" 

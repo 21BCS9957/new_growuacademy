@@ -168,22 +168,19 @@ All colors MUST be HSL.
     filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.25));
   }
 
-  /* Colorful Modern Hero Gradient */
-  .gradient-text-hero-colorful {
-    background: linear-gradient(135deg, 
-      hsl(280 100% 70%) 0%,     /* Purple */
-      hsl(320 100% 65%) 15%,    /* Pink */
-      hsl(0 100% 65%) 30%,      /* Red */
-      hsl(25 100% 60%) 45%,     /* Orange */
-      hsl(48 100% 65%) 60%,     /* Yellow */
-      hsl(120 60% 50%) 75%,     /* Green */
-      hsl(200 100% 60%) 90%,    /* Blue */
-      hsl(260 100% 70%) 100%    /* Purple */
+  /* Silver to Yellow Hero Gradient */
+  .gradient-text-hero-silver-yellow {
+    background: linear-gradient(90deg, 
+      hsl(0 0% 75%) 0%,         /* Silver */
+      hsl(0 0% 85%) 20%,        /* Light Silver */
+      hsl(45 30% 80%) 40%,      /* Silver-Gold */
+      hsl(48 60% 70%) 60%,      /* Light Yellow */
+      hsl(48 80% 65%) 80%,      /* Yellow */
+      hsl(45 100% 60%) 100%     /* Golden Yellow */
     );
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
   }
 
   .stats-number {

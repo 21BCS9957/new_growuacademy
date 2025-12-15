@@ -3,6 +3,7 @@ import { Sparkles, Target, Rocket, Award, Users, TrendingUp } from "lucide-react
 
 const TimelineSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [activeCircles, setActiveCircles] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const mobileLineRef = useRef<HTMLDivElement>(null);
@@ -61,47 +62,71 @@ const TimelineSection = () => {
       const sectionHeight = sectionRect.height;
       const windowHeight = window.innerHeight;
 
-      // Calculate line progress based on scroll position within the section
+      // More precise line progress calculation
       let scrollProgress = 0;
       
-      if (sectionTop <= 0) {
-        // Section has started scrolling past the top
-        const scrolledDistance = Math.abs(sectionTop);
-        const totalScrollDistance = sectionHeight - windowHeight;
-        scrollProgress = Math.min(1, scrolledDistance / totalScrollDistance);
-      } else if (sectionTop < windowHeight) {
-        // Section is entering the viewport
-        scrollProgress = Math.max(0, (windowHeight - sectionTop) / windowHeight * 0.3);
+      if (sectionTop <= windowHeight * 0.8) {
+        const scrolledIntoView = (windowHeight * 0.8 - sectionTop);
+        const totalScrollDistance = sectionHeight + (windowHeight * 0.8);
+        scrollProgress = Math.min(1, Math.max(0, scrolledIntoView / totalScrollDistance));
       }
       
-      // Update both desktop and mobile lines
+
+      
+      // Smooth line animation with easing
+      const easedProgress = scrollProgress * scrollProgress * (3 - 2 * scrollProgress); // Smoothstep easing
+      
       if (lineRef.current) {
-        lineRef.current.style.height = `${scrollProgress * 100}%`;
+        lineRef.current.style.height = `${easedProgress * 100}%`;
+        lineRef.current.style.transition = 'height 0.1s ease-out';
       }
       if (mobileLineRef.current) {
-        mobileLineRef.current.style.height = `${scrollProgress * 100}%`;
+        mobileLineRef.current.style.height = `${easedProgress * 100}%`;
+        mobileLineRef.current.style.transition = 'height 0.1s ease-out';
       }
 
-      // Check which cards should be visible
+      // Check which cards and circles should be visible/active
       const cards = sectionRef.current.querySelectorAll('.timeline-card');
       const newVisibleCards: number[] = [];
+      const newActiveCircles: number[] = [];
 
       cards.forEach((card, index) => {
         const cardRect = card.getBoundingClientRect();
+        const cardTop = cardRect.top;
         const cardMiddle = cardRect.top + cardRect.height / 2;
         
-        if (cardMiddle < windowHeight * 0.75) {
+        // Card visibility (earlier trigger)
+        if (cardMiddle < windowHeight * 0.8) {
           newVisibleCards.push(index);
+        }
+        
+        // Circle activation (when line reaches it)
+        const circlePosition = cardTop + (cardRect.height / 2);
+        if (circlePosition <= windowHeight * 0.6) {
+          newActiveCircles.push(index);
         }
       });
 
       setVisibleCards(newVisibleCards);
+      setActiveCircles(newActiveCircles);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    // Use requestAnimationFrame for smoother animations
+    let ticking = false;
+    const smoothScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', smoothScroll, { passive: true });
     handleScroll(); // Initial check
     
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', smoothScroll);
   }, []);
 
   return (
@@ -118,19 +143,19 @@ const TimelineSection = () => {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Center Line - Desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border overflow-hidden z-0">
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border/50 overflow-hidden z-0 rounded-full">
             <div 
               ref={lineRef}
-              className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/50 transition-all duration-300 ease-out"
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/70 shadow-[0_0_10px_rgba(255,215,0,0.5)] rounded-full"
               style={{ height: '0%' }}
             />
           </div>
 
           {/* Left Line - Mobile */}
-          <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-border overflow-hidden z-0">
+          <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-border/50 overflow-hidden z-0 rounded-full">
             <div 
               ref={mobileLineRef}
-              className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/50 transition-all duration-300 ease-out"
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/70 shadow-[0_0_8px_rgba(255,215,0,0.4)] rounded-full"
               style={{ height: '0%' }}
             />
           </div>
@@ -150,11 +175,19 @@ const TimelineSection = () => {
                   } flex-row gap-6 lg:gap-8`}
                 >
                   {/* Mobile Number */}
-                  <div className={`lg:hidden relative flex-shrink-0 w-12 h-12 rounded-full bg-background border-4 border-primary/30 flex items-center justify-center transition-all duration-700 z-20 ${
+                  <div className={`lg:hidden relative flex-shrink-0 w-12 h-12 rounded-full bg-background border-4 flex items-center justify-center transition-all duration-700 z-20 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-50'
+                  } ${
+                    activeCircles.includes(index) 
+                      ? 'border-primary shadow-[0_0_20px_rgba(255,215,0,0.6)]' 
+                      : 'border-primary/30'
                   }`}>
-                    <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center`}>
-                      <span className={`text-sm font-bold ${item.color}`}>
+                    <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center transition-all duration-500 ${
+                      activeCircles.includes(index) ? 'shadow-[0_0_15px_rgba(255,215,0,0.4)]' : ''
+                    }`}>
+                      <span className={`text-sm font-bold ${item.color} transition-all duration-500 ${
+                        activeCircles.includes(index) ? 'scale-110' : ''
+                      }`}>
                         {index + 1}
                       </span>
                     </div>
@@ -188,10 +221,18 @@ const TimelineSection = () => {
                     isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                   }`}>
                     {/* Outer circle with background color to mask the line */}
-                    <div className="w-12 h-12 rounded-full bg-background border-4 border-primary/20 flex items-center justify-center shadow-lg">
+                    <div className={`w-12 h-12 rounded-full bg-background border-4 flex items-center justify-center shadow-lg transition-all duration-500 ${
+                      activeCircles.includes(index) 
+                        ? 'border-primary shadow-[0_0_25px_rgba(255,215,0,0.8)]' 
+                        : 'border-primary/20'
+                    }`}>
                       {/* Inner circle with gradient background */}
-                      <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center`}>
-                        <span className={`text-xs font-bold ${item.color}`}>
+                      <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center transition-all duration-500 ${
+                        activeCircles.includes(index) ? 'shadow-[0_0_15px_rgba(255,215,0,0.4)] scale-110' : ''
+                      }`}>
+                        <span className={`text-xs font-bold ${item.color} transition-all duration-500 ${
+                          activeCircles.includes(index) ? 'scale-110' : ''
+                        }`}>
                           {index + 1}
                         </span>
                       </div>

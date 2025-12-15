@@ -34,7 +34,7 @@ const UrgencyBanner = () => {
 
   return (
     <div className="fixed bottom-0 left-2 right-2 sm:left-0 sm:right-0 z-50 bg-destructive/95 border-t border-destructive-foreground/15 shadow-2xl rounded-t-lg sm:rounded-none">
-      <div className="container mx-auto px-2 sm:px-4 py-1.5 sm:py-2.5">
+      <div className="container mx-auto px-2 sm:px-4 py-3 sm:py-4">
         <div className="flex flex-row items-center justify-between gap-2 sm:gap-3">
           
           {/* Urgency Message */}
@@ -56,7 +56,7 @@ const UrgencyBanner = () => {
                 { label: 'S', value: timeLeft.seconds }
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-0.5">
-                  <div className="bg-destructive-foreground text-destructive font-bold text-xs px-1.5 py-0.5 rounded min-w-[1.5rem]">
+                  <div className="bg-destructive-foreground text-destructive font-bold text-xs px-2 py-1 rounded min-w-[1.5rem]">
                     {item.value.toString().padStart(2, '0')}
                   </div>
                   <span className="text-destructive-foreground/80 text-[8px] sm:text-xs">
@@ -70,7 +70,7 @@ const UrgencyBanner = () => {
           {/* CTA Button */}
           <LoadingButton 
             size="sm"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-2 sm:px-4 py-1 sm:py-2 rounded-full whitespace-nowrap"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-xs px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-full whitespace-nowrap"
             href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
             target="_blank"
             rel="noopener noreferrer"
