@@ -16,10 +16,8 @@ const ClassroomSection = () => {
         
         {/* Header */}
         <div ref={contentRef as any} className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
-            <span className="gradient-text">
-              Where Learning Happens
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight gradient-text-hero-silver-yellow">
+            Where Learning Happens
           </h2>
         </div>
 

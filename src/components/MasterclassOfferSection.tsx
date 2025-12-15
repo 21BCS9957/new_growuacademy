@@ -7,9 +7,9 @@ const MasterclassOfferSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 lg:mb-6">
-              <span className="gradient-text">Offline Masterclass</span>
-              <br /><span className="gradient-text-subtle">Cheapest & Most Effective</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 lg:mb-6 gradient-text-hero-silver-yellow">
+              Offline Masterclass
+              <br />Cheapest & Most Effective
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground">
               Transform your video editing skills in just 2 hours with hands-on training
@@ -25,7 +25,7 @@ const MasterclassOfferSection = () => {
                     <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-black gradient-text-primary">2 Hours Intensive</h3>
+                    <h3 className="text-2xl sm:text-3xl font-black gradient-text-hero-silver-yellow">2 Hours Intensive</h3>
                     <p className="text-sm sm:text-base text-muted-foreground">Power-packed learning session</p>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const MasterclassOfferSection = () => {
               </div>
 
               <div className="space-y-4 sm:space-y-6">
-                <h4 className="text-xl sm:text-2xl font-bold gradient-text-secondary mb-4 sm:mb-6">What Makes This Special?</h4>
+                <h4 className="text-xl sm:text-2xl font-bold gradient-text-hero-silver-yellow mb-4 sm:mb-6">What Makes This Special?</h4>
                 
                 <div className="space-y-3 sm:space-y-4">
                   {[

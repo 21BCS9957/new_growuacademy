@@ -133,8 +133,8 @@ const TimelineSection = () => {
     <section ref={sectionRef} className="py-16 lg:py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-black mb-6">
-            <span className="gradient-text-subtle">Your Journey to</span> <span className="gradient-text">Success</span>
+          <h2 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-hero-silver-yellow">
+            Your Journey to Success
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Follow the proven path that has helped hundreds of students become professional video editors
@@ -210,7 +210,7 @@ const TimelineSection = () => {
                         <div className={`hidden lg:flex ${item.bgColor} p-3 rounded-full`}>
                           <Icon className={`w-6 h-6 ${item.color}`} />
                         </div>
-                        <h3 className="text-xl lg:text-2xl font-bold gradient-text-primary">{item.title}</h3>
+                        <h3 className="text-xl lg:text-2xl font-bold gradient-text-hero-silver-yellow">{item.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-base lg:text-lg">{item.description}</p>
                     </div>

@@ -32,8 +32,8 @@ const BenefitsSection = () => {
     <section ref={sectionRef as any} className="py-12 sm:py-16 lg:py-24 bg-card">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6">
-            <span className="gradient-text-subtle">What Will You</span> <span className="gradient-text">Gain</span> <span className="gradient-text-subtle">From This Session?</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 gradient-text-hero-silver-yellow">
+            What Will You Gain From This Session?
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Transform from beginner to job-ready video editor with tangible skills and career opportunities
@@ -48,7 +48,7 @@ const BenefitsSection = () => {
                   {benefit.icon}
                 </div>
                 <div className="text-center sm:text-left">
-                  <h3 className="text-xl sm:text-2xl font-bold gradient-text-primary mb-3 sm:mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold gradient-text-hero-silver-yellow mb-3 sm:mb-4">
                     {benefit.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
@@ -62,7 +62,7 @@ const BenefitsSection = () => {
 
         <div className="text-center mt-12 sm:mt-16">
           <div className="bg-primary/10 border border-primary/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto">
-            <h3 className="text-xl sm:text-2xl font-bold gradient-text-secondary mb-4 sm:mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold gradient-text-hero-silver-yellow mb-4 sm:mb-6">
               Plus, You'll Receive:
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-left">

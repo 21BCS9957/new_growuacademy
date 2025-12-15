@@ -10,21 +10,21 @@ const PlacementGuaranteeSection = () => {
             <Shield className="w-20 h-20 text-primary" />
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-black mb-6">
-            <span className="gradient-text">100%</span> <span className="gradient-text-subtle">Placement</span>
-            <br /><span className="gradient-text-primary">Guarantee</span>
+          <h2 className="text-5xl lg:text-6xl font-black mb-6 gradient-text-hero-silver-yellow">
+            100% Placement
+            <br />Guarantee
           </h2>
           
           <p className="text-2xl text-muted-foreground mb-12 leading-relaxed">
             We're so confident in our training that we guarantee job placement. 
             If you don't get placed within 6 months, we'll refund your entire fee.
           </p>
-
+          
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
               <div className="stats-number">95%</div>
-              <p className="text-muted-foreground mt-2">Students placed within 3 months</p>
+             <p className="text-muted-foreground mt-2">Students placed within 3 months</p>
             </div>
             <div className="text-center">
               <Briefcase className="w-12 h-12 text-primary mx-auto mb-4" />
