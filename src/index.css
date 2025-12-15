@@ -127,6 +127,65 @@ All colors MUST be HSL.
     filter: drop-shadow(var(--accent-glow));
   }
 
+  /* Gradient text utilities */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(48 100% 67%), hsl(45 100% 60%), hsl(42 100% 55%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+  }
+
+  .gradient-text-primary {
+    background: linear-gradient(135deg, hsl(48 100% 67%), hsl(45 100% 60%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.35));
+  }
+
+  .gradient-text-secondary {
+    background: linear-gradient(135deg, hsl(48 100% 67%), hsl(35 100% 65%), hsl(25 100% 60%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 165, 0, 0.3));
+  }
+
+  .gradient-text-vibrant {
+    background: linear-gradient(135deg, hsl(48 100% 67%), hsl(35 100% 65%), hsl(320 100% 70%), hsl(280 100% 75%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.5));
+  }
+
+  .gradient-text-subtle {
+    background: linear-gradient(135deg, hsl(0 0% 98%), hsl(48 100% 67%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.25));
+  }
+
+  /* Colorful Modern Hero Gradient */
+  .gradient-text-hero-colorful {
+    background: linear-gradient(135deg, 
+      hsl(280 100% 70%) 0%,     /* Purple */
+      hsl(320 100% 65%) 15%,    /* Pink */
+      hsl(0 100% 65%) 30%,      /* Red */
+      hsl(25 100% 60%) 45%,     /* Orange */
+      hsl(48 100% 65%) 60%,     /* Yellow */
+      hsl(120 60% 50%) 75%,     /* Green */
+      hsl(200 100% 60%) 90%,    /* Blue */
+      hsl(260 100% 70%) 100%    /* Purple */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
   .stats-number {
     @apply text-4xl md:text-5xl lg:text-6xl font-black text-primary;
     filter: drop-shadow(var(--accent-glow));

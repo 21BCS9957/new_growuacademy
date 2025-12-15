@@ -108,8 +108,8 @@ const TimelineSection = () => {
     <section ref={sectionRef} className="py-16 lg:py-24 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-6">
-            Your Journey to <span className="accent-text">Success</span>
+          <h2 className="text-4xl lg:text-5xl font-black mb-6">
+            <span className="gradient-text-subtle">Your Journey to</span> <span className="gradient-text">Success</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Follow the proven path that has helped hundreds of students become professional video editors
@@ -118,7 +118,7 @@ const TimelineSection = () => {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Center Line - Desktop */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border overflow-hidden">
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border overflow-hidden z-0">
             <div 
               ref={lineRef}
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/50 transition-all duration-300 ease-out"
@@ -127,7 +127,7 @@ const TimelineSection = () => {
           </div>
 
           {/* Left Line - Mobile */}
-          <div className="lg:hidden absolute left-[2rem] top-0 bottom-0 w-1 bg-border overflow-hidden">
+          <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-border overflow-hidden z-0">
             <div 
               ref={mobileLineRef}
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/50 transition-all duration-300 ease-out"
@@ -150,12 +150,14 @@ const TimelineSection = () => {
                   } flex-row gap-6 lg:gap-8`}
                 >
                   {/* Mobile Number */}
-                  <div className={`lg:hidden relative flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br ${item.bgColor} border-2 border-primary/30 flex items-center justify-center transition-all duration-700 z-10 ${
+                  <div className={`lg:hidden relative flex-shrink-0 w-12 h-12 rounded-full bg-background border-4 border-primary/30 flex items-center justify-center transition-all duration-700 z-20 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-50'
                   }`}>
-                    <span className={`text-lg font-bold ${item.color}`}>
-                      {index + 1}
-                    </span>
+                    <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center`}>
+                      <span className={`text-sm font-bold ${item.color}`}>
+                        {index + 1}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Card */}
@@ -175,20 +177,24 @@ const TimelineSection = () => {
                         <div className={`hidden lg:flex ${item.bgColor} p-3 rounded-full`}>
                           <Icon className={`w-6 h-6 ${item.color}`} />
                         </div>
-                        <h3 className="text-xl lg:text-2xl font-bold text-foreground">{item.title}</h3>
+                        <h3 className="text-xl lg:text-2xl font-bold gradient-text-primary">{item.title}</h3>
                       </div>
                       <p className="text-muted-foreground text-base lg:text-lg">{item.description}</p>
                     </div>
                   </div>
 
                   {/* Center Dot - Desktop Only */}
-                  <div className={`hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-700 ${
+                  <div className={`hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-700 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                   }`}>
-                    <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.bgColor} border-4 border-background shadow-lg flex items-center justify-center`}>
-                      <span className={`text-sm font-bold ${item.color}`}>
-                        {index + 1}
-                      </span>
+                    {/* Outer circle with background color to mask the line */}
+                    <div className="w-12 h-12 rounded-full bg-background border-4 border-primary/20 flex items-center justify-center shadow-lg">
+                      {/* Inner circle with gradient background */}
+                      <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center`}>
+                        <span className={`text-xs font-bold ${item.color}`}>
+                          {index + 1}
+                        </span>
+                      </div>
                     </div>
                   </div>
 

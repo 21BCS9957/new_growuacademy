@@ -11,7 +11,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="GrowU Academy Logo" 
-              className="h-12 w-auto sm:h-16 md:h-20 lg:h-24 transition-all duration-300 group-hover:scale-110" 
+              className="h-20 w-auto sm:h-20 md:h-22 lg:h-24 transition-all duration-300 group-hover:scale-110" 
             />
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>

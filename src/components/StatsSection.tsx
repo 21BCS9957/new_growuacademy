@@ -4,16 +4,16 @@ const statsData = [
     label: "Offline  Learners"
   },
   {
-    number: "50+", 
-    label: "Freelancing  Projects"
-  },
-  {
-    number: "95%",
-    label: "Success Rate"
-  },
-  {
-    number: "50+",
+    number: "95%", 
     label: "Learners Placed"
+  },
+  {
+    number: "10K",
+    label: "Worth Free Bonus"
+  },
+  {
+    number: "100%",
+    label: "Practical Training"
   }
 ];
 
@@ -24,7 +24,7 @@ const StatsSection = () => {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {statsData.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-primary mb-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black gradient-text mb-2">
                 {stat.number}
               </div>
               <p className="text-muted-foreground font-medium text-xs sm:text-sm lg:text-base uppercase tracking-wider">

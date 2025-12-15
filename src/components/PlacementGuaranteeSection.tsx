@@ -10,9 +10,9 @@ const PlacementGuaranteeSection = () => {
             <Shield className="w-20 h-20 text-primary" />
           </div>
           
-          <h2 className="text-5xl lg:text-6xl font-black text-card-foreground mb-6">
-            <span className="accent-text">100%</span> Placement 
-            <br />Guarantee
+          <h2 className="text-5xl lg:text-6xl font-black mb-6">
+            <span className="gradient-text">100%</span> <span className="gradient-text-subtle">Placement</span>
+            <br /><span className="gradient-text-primary">Guarantee</span>
           </h2>
           
           <p className="text-2xl text-muted-foreground mb-12 leading-relaxed">

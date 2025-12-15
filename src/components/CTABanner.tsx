@@ -8,7 +8,7 @@ const CTABanner = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
             <h3 className="text-xl lg:text-2xl font-bold text-primary-foreground">
-              Limited Time: Early Bird Discount Available
+              <span className="bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">Limited Time: Early Bird Discount Available</span>
             </h3>
             <p className="text-primary-foreground/80 mt-1">
               Join now and save 40% on all premium courses

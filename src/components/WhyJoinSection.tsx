@@ -28,8 +28,8 @@ const WhyJoinSection = () => {
     <section className="py-16 lg:py-24">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-black text-foreground mb-6">
-            Why Choose <span className="accent-text">GrowU Academy?</span>
+          <h2 className="text-4xl lg:text-5xl font-black mb-6">
+            <span className="gradient-text-subtle">Why Choose</span> <span className="gradient-text">GrowU Academy?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Join thousands of successful students who have transformed their careers with our proven methodology
@@ -42,7 +42,7 @@ const WhyJoinSection = () => {
               <div className="flex justify-center mb-6">
                 {reason.icon}
               </div>
-              <h3 className="text-xl font-bold text-card-foreground mb-4">
+              <h3 className="text-xl font-bold gradient-text-primary mb-4">
                 {reason.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

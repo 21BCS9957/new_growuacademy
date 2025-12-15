@@ -5,8 +5,8 @@ import MasterclassOfferSection from "@/components/MasterclassOfferSection";
 import ClassroomSection from "@/components/ClassroomSection";
 import TimelineSection from "@/components/TimelineSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import CTABanner from "@/components/CTABanner";
 import UrgencyBanner from "@/components/UrgencyBanner";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -20,7 +20,7 @@ const Index = () => {
         <TimelineSection />
         <BenefitsSection />
       </main>
-      <CTABanner />
+      <Footer />
       <UrgencyBanner />
     </div>
   );

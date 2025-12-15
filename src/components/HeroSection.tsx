@@ -14,14 +14,10 @@ const HeroSection = () => {
         {/* Text Content */}
         <div ref={contentRef as any} className="space-y-6 sm:space-y-8 text-center">
           <div className="space-y-3 sm:space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-none group cursor-default">
-              <span className="inline-block transition-all duration-300 ease-out text-muted-foreground/90">
-                Want To Build your
-              </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight group cursor-default gradient-text-hero-colorful hover:scale-105 transition-all duration-300 ease-out">
+              Want To Build your Career
               <br />
-              <span className="inline-block transition-all duration-300 ease-out drop-shadow-[0_0_15px_rgba(255,215,0,0.45)] hover:drop-shadow-[0_0_24px_rgba(255,215,0,0.6)] bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-                Career in Video Editing
-              </span>
+              in Video Editing ?
             </h1>
           </div>
 
@@ -30,15 +26,15 @@ const HeroSection = () => {
           </p>
 
           {/* Seats Progress Bar */}
-          <div className="max-w-md mx-auto bg-gradient-to-br from-card via-card to-card/95 border-2 border-primary/20 rounded-2xl p-5 sm:p-6 shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(255,215,0,0.15)] transition-all duration-300 backdrop-blur-sm">
+          <div className="max-w-sm mx-auto bg-gradient-to-br from-card/80 via-card/90 to-card/95 rounded-2xl p-4 sm:p-5 shadow-[0_12px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_16px_50px_rgba(255,215,0,0.2)] transition-all duration-500 backdrop-blur-md">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-destructive animate-pulse" />
-                <span className="text-sm sm:text-base font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
+                <span className="text-sm sm:text-base font-bold gradient-text-primary">
                   Seats Filling Fast!
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 bg-primary/10 px-3 py-1.5 rounded-full border border-primary/30">
+              <div className="flex items-center gap-1.5 bg-primary/15 px-3 py-1.5 rounded-full shadow-inner">
                 <span className="text-sm sm:text-base font-black text-primary">13</span>
                 <span className="text-xs text-muted-foreground">/</span>
                 <span className="text-sm sm:text-base font-semibold text-muted-foreground">15</span>
@@ -52,7 +48,7 @@ const HeroSection = () => {
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(255,215,0,0.6)]" />
                 <span className="text-xs sm:text-sm font-medium text-muted-foreground">86.67% Full</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-destructive/10 px-2.5 py-1 rounded-full border border-destructive/30">
+              <div className="flex items-center gap-1.5 bg-destructive/15 px-2.5 py-1 rounded-full shadow-inner">
                 <span className="text-xs sm:text-sm font-bold text-destructive">Only 2 Left!</span>
               </div>
             </div>
