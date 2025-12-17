@@ -82,43 +82,46 @@ const UrgencyBanner = () => {
     <div className={`fixed bottom-0 left-0 right-0 z-50 bg-destructive/95 border-t border-destructive-foreground/15 shadow-2xl transition-transform duration-300 ease-in-out ${
       isVisible ? 'translate-y-0' : 'translate-y-full'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
-        <div className="flex flex-row items-center justify-between gap-4 sm:gap-6">
+      <div className="container mx-auto px-3 sm:px-6 py-3 sm:py-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6">
           
-          {/* Urgency Message */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <AlertTriangle className="w-5 h-5 sm:w-7 sm:h-7 text-destructive-foreground animate-pulse" />
-            <div className="flex items-center gap-2 sm:gap-3 text-destructive-foreground">
-              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="font-bold text-sm sm:text-base">ONLY 2 SEATS LEFT!</span>
+          {/* Top Row - Mobile: Urgency Message and Timer */}
+          <div className="flex items-center justify-between w-full sm:w-auto gap-3 sm:gap-6">
+            {/* Urgency Message */}
+            <div className="flex items-center gap-1.5 sm:gap-3">
+              <AlertTriangle className="w-4 h-4 sm:w-7 sm:h-7 text-destructive-foreground animate-pulse" />
+              <div className="flex items-center gap-1.5 sm:gap-3 text-destructive-foreground">
+                <Users className="w-3 h-3 sm:w-5 sm:h-5" />
+                <span className="font-bold text-xs sm:text-base">ONLY 2 SEATS LEFT!</span>
+              </div>
             </div>
-          </div>
 
-          {/* Countdown Timer */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-destructive-foreground" />
-            <div className="flex gap-2 sm:gap-3">
-              {[
-                { label: 'H', value: timeLeft.hours },
-                { label: 'M', value: timeLeft.minutes },
-                { label: 'S', value: timeLeft.seconds }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-1">
-                  <div className="bg-destructive-foreground text-destructive font-bold text-sm px-3 py-2 rounded min-w-[2rem] sm:min-w-[2.5rem]">
-                    {item.value.toString().padStart(2, '0')}
+            {/* Countdown Timer */}
+            <div className="flex items-center gap-1.5 sm:gap-3">
+              <Clock className="w-3 h-3 sm:w-5 sm:h-5 text-destructive-foreground" />
+              <div className="flex gap-1 sm:gap-3">
+                {[
+                  { label: 'H', value: timeLeft.hours },
+                  { label: 'M', value: timeLeft.minutes },
+                  { label: 'S', value: timeLeft.seconds }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center gap-0.5">
+                    <div className="bg-destructive-foreground text-destructive font-bold text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-2 rounded min-w-[1.5rem] sm:min-w-[2.5rem]">
+                      {item.value.toString().padStart(2, '0')}
+                    </div>
+                    <span className="text-destructive-foreground/80 text-[10px] sm:text-sm">
+                      {item.label}
+                    </span>
                   </div>
-                  <span className="text-destructive-foreground/80 text-xs sm:text-sm">
-                    {item.label}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Full width on mobile */}
           <LoadingButton 
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-sm sm:text-base px-4 sm:px-6 py-2.5 sm:py-3 rounded-full whitespace-nowrap"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-sm sm:text-base px-6 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap w-full sm:w-auto"
             href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
             target="_blank"
             rel="noopener noreferrer"
