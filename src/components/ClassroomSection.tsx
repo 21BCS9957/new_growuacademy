@@ -35,15 +35,6 @@ const ClassroomSection = () => {
                   alt="Professional video editing classroom with students learning" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
-                    <span className="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">Interactive Learning Environment</span>
-                  </h3>
-                  <p className="text-sm text-white/90">
-                    Modern classrooms with latest software
-                  </p>
-                </div>
               </div>
 
               {/* Image 2 */}
@@ -53,15 +44,6 @@ const ClassroomSection = () => {
                   alt="Students working on video editing projects" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
-                    <span className="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">Collaborative Projects</span>
-                  </h3>
-                  <p className="text-sm text-white/90">
-                    Work together on real assignments
-                  </p>
-                </div>
               </div>
 
               {/* Image 3 */}
@@ -71,15 +53,6 @@ const ClassroomSection = () => {
                   alt="Professional video editing setup and workspace" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
-                    <span className="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">Professional Tools</span>
-                  </h3>
-                  <p className="text-sm text-white/90">
-                    Industry-standard editing suites
-                  </p>
-                </div>
               </div>
 
               {/* Image 4 */}
@@ -89,15 +62,6 @@ const ClassroomSection = () => {
                   alt="Instructor teaching video editing techniques" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2">
-                    <span className="bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">Expert Guidance</span>
-                  </h3>
-                  <p className="text-sm text-white/90">
-                    Learn from industry professionals
-                  </p>
-                </div>
               </div>
 
             </Marquee>

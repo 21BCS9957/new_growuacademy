@@ -9,7 +9,7 @@ const MasterclassOfferSection = () => {
           <div className="text-center mb-8 lg:mb-16">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 lg:mb-6 gradient-text-hero-silver-yellow">
               Offline Masterclass
-              <br />Cheapest & Most Effective
+              <br />Practical & Most Effective
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground">
               Transform your video editing skills in just 2 hours with hands-on training
