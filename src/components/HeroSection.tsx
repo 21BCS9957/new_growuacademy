@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div ref={contentRef as any} className="space-y-6 sm:space-y-8 text-center">
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tighter leading-tight group cursor-default gradient-text-hero-silver-yellow hover:scale-105 transition-all duration-300 ease-out">
-              Want To Build your<br/>Career in Video Editing ?
+              Want To Build Career  <br/> in Video Editing?
             </h1>
           </div>
 
