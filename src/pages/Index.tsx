@@ -7,6 +7,7 @@ import TimelineSection from "@/components/TimelineSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import Footer from "@/components/Footer";
+import WelcomePopup from "@/components/WelcomePopup";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       </main>
       <Footer />
       <UrgencyBanner />
+      <WelcomePopup />
     </div>
   );
 };

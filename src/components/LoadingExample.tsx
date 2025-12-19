@@ -1,7 +1,7 @@
 import { Loader } from "@/components/ui/loader";
 import { Button } from "@/components/ui/button";
 
-// Example component showing how to use the standardized loader
+
 const LoadingExample = () => {
   return (
     <div className="space-y-6 p-6">

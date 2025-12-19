@@ -2,14 +2,16 @@ import { ModernProgress } from "@/components/ui/progress";
 import { LoadingButton } from "@/components/LoadingButton";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { User, Users, UserCheck, UserPlus, Flame } from "lucide-react";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const HeroSection = () => {
   const heroRef = useScrollAnimation({ threshold: 0.1 });
   const contentRef = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section ref={heroRef as any} className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24">
-      <div className="max-w-4xl mx-auto">
+    <section ref={heroRef as any} className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 overflow-hidden">
+      <ParticleBackground />
+      <div className="max-w-4xl mx-auto relative z-10">
         
         {/* Text Content */}
         <div ref={contentRef as any} className="space-y-6 sm:space-y-8 text-center">
@@ -102,4 +104,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;
