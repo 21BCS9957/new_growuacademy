@@ -8,7 +8,7 @@ const statsData = [
     label: "Learners Placed"
   },
   {
-    number: "10K",
+    number: "₹10K",
     label: "Worth Free Bonus"
   },
   {

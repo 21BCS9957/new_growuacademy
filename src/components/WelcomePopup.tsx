@@ -57,7 +57,7 @@ const WelcomePopup = () => {
             </div>
             <div>
               <p className="text-sm font-medium">
-                You'll receive exclusive bonuses and a certificate of completion after the masterclass.
+                You'll get exclusive bonuses and a certificate upon completing the masterclass.
               </p>
             </div>
           </div>
@@ -66,7 +66,6 @@ const WelcomePopup = () => {
         {/* Action Button */}
         <div className="px-6 pb-6">
           <LoadingButton
-            onClick={closePopup}
             className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-500 hover:to-orange-500 text-black font-bold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
             target="_blank"

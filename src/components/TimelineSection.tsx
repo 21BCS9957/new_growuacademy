@@ -11,43 +11,43 @@ const TimelineSection = () => {
   const timelineItems = [
     {
       icon: Sparkles,
-      title: "Master the Fundamentals",
-      description: "Learn industry-standard editing techniques from scratch with hands-on practice",
+      title: "Career Clarity",
+      description: "Clear understanding of scope, roles, and growth paths in video editing.",
       color: "text-blue-500",
       bgColor: "bg-blue-500/10",
     },
     {
       icon: Target,
-      title: "Build Your Portfolio",
-      description: "Create stunning projects that showcase your skills to potential clients",
+      title: "AI-Powered Workflow",
+      description: "How AI fits into a professional editing workflow to save time and scale output",
       color: "text-purple-500",
       bgColor: "bg-purple-500/10",
     },
     {
       icon: Rocket,
-      title: "Launch Your Career",
-      description: "Get placement assistance and start earning as a professional video editor",
+      title: "Quality Connections",
+      description: "Connect with focused, like-minded editors for long-term growth.",
       color: "text-pink-500",
       bgColor: "bg-pink-500/10",
     },
     {
       icon: Award,
-      title: "Earn Certification",
-      description: "Receive industry-recognized certification to boost your credibility",
+      title: "Certification",
+      description: "Verified masterclass certificate to strengthen your CV and profile.",
       color: "text-orange-500",
       bgColor: "bg-orange-500/10",
     },
     {
       icon: Users,
-      title: "Join the Community",
-      description: "Network with fellow editors and collaborate on exciting projects",
+      title: "Tools & Plugins",
+      description: "Essential professional tools that speed up your editing workflow.",
       color: "text-green-500",
       bgColor: "bg-green-500/10",
     },
     {
       icon: TrendingUp,
-      title: "Scale Your Income",
-      description: "Learn advanced techniques to command premium rates in the market",
+      title: "Bonus Resources",
+      description: "10GB+ ready-to-use PNGs, music, SFX, and plugins.",
       color: "text-cyan-500",
       bgColor: "bg-cyan-500/10",
     },
@@ -142,7 +142,7 @@ const TimelineSection = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Center Line - Desktop */}
+          {/* Center Line - Desktop: positioned at column 5 (50%) */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border/50 overflow-hidden z-0 rounded-full">
             <div 
               ref={lineRef}
@@ -160,7 +160,7 @@ const TimelineSection = () => {
             />
           </div>
 
-          {/* Timeline Items */}
+          {/* Timeline Items - Desktop Grid Layout */}
           <div className="space-y-12 lg:space-y-16">
             {timelineItems.map((item, index) => {
               const Icon = item.icon;
@@ -170,9 +170,9 @@ const TimelineSection = () => {
               return (
                 <div
                   key={index}
-                  className={`timeline-card relative flex items-center ${
-                    isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } flex-row gap-6 lg:gap-8`}
+                  className={`timeline-card relative 
+                    flex items-center flex-row gap-6
+                    lg:grid lg:grid-cols-9 lg:gap-0 lg:items-center lg:min-h-[120px]`}
                 >
                   {/* Mobile Number */}
                   <div className={`lg:hidden relative flex-shrink-0 w-12 h-12 rounded-full bg-background border-4 flex items-center justify-center transition-all duration-700 z-20 ${
@@ -185,7 +185,7 @@ const TimelineSection = () => {
                     <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center transition-all duration-500 ${
                       activeCircles.includes(index) ? 'shadow-[0_0_15px_rgba(255,215,0,0.4)]' : ''
                     }`}>
-                      <span className={`text-sm font-bold ${item.color} transition-all duration-500 ${
+                      <span className={`text-sm font-bold gradient-text-hero-silver-yellow transition-all duration-500 ${
                         activeCircles.includes(index) ? 'scale-110' : ''
                       }`}>
                         {index + 1}
@@ -193,13 +193,17 @@ const TimelineSection = () => {
                     </div>
                   </div>
 
-                  {/* Card */}
+                  {/* Card - Grid positioned to never cross center */}
                   <div
-                    className={`flex-1 lg:w-[calc(50%-3rem)] transform transition-all duration-700 ${
-                      isVisible 
+                    className={`flex-1 transform transition-all duration-700 
+                      ${isLeft 
+                        ? 'lg:col-start-1 lg:col-span-4 lg:pr-8' 
+                        : 'lg:col-start-6 lg:col-span-4 lg:pl-8'
+                      }
+                      ${isVisible 
                         ? 'opacity-100 translate-x-0' 
-                        : `opacity-0 ${isLeft ? 'lg:-translate-x-12' : 'lg:translate-x-12'} translate-y-4 lg:translate-y-0`
-                    }`}
+                        : `opacity-0 ${isLeft ? 'lg:-translate-x-6' : 'lg:translate-x-6'} translate-y-4 lg:translate-y-0`
+                      }`}
                   >
                     <div className={`bg-card border border-border rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-shadow duration-300 ${
                       isLeft ? 'lg:text-right' : 'lg:text-left'
@@ -216,8 +220,8 @@ const TimelineSection = () => {
                     </div>
                   </div>
 
-                  {/* Center Dot - Desktop Only */}
-                  <div className={`hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-700 ${
+                  {/* Center Dot - Desktop Only: positioned at column 5 */}
+                  <div className={`hidden lg:block lg:col-start-5 lg:col-span-1 lg:flex lg:justify-center lg:items-center z-20 transition-all duration-700 ${
                     isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                   }`}>
                     {/* Outer circle with background color to mask the line */}
@@ -230,7 +234,7 @@ const TimelineSection = () => {
                       <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${item.bgColor} flex items-center justify-center transition-all duration-500 ${
                         activeCircles.includes(index) ? 'shadow-[0_0_15px_rgba(255,215,0,0.4)] scale-110' : ''
                       }`}>
-                        <span className={`text-xs font-bold ${item.color} transition-all duration-500 ${
+                        <span className={`text-xs font-bold gradient-text-hero-silver-yellow transition-all duration-500 ${
                           activeCircles.includes(index) ? 'scale-110' : ''
                         }`}>
                           {index + 1}
@@ -238,9 +242,6 @@ const TimelineSection = () => {
                       </div>
                     </div>
                   </div>
-
-                  {/* Spacer for the other side - Desktop Only */}
-                  <div className="hidden lg:block w-[calc(50%-3rem)]" />
                 </div>
               );
             })}
