@@ -35,9 +35,6 @@ const BenefitsSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 gradient-text-hero-silver-yellow">
             What Will You Gain From This Session?
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Transform from beginner to job-ready video editor with tangible skills and career opportunities
-          </p>
         </div>
 
         <div ref={cardsRef as any} className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto animate-stagger">

@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { Sparkles, Target, Rocket, Award, Users, TrendingUp } from "lucide-react";
+import { LoadingButton } from "@/components/LoadingButton";
 
 const TimelineSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const [activeCircles, setActiveCircles] = useState<number[]>([]);
+  const [ctaVisible, setCtaVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const lineRef = useRef<HTMLDivElement>(null);
   const mobileLineRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   const timelineItems = [
     {
@@ -55,26 +58,26 @@ const TimelineSection = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current) return;
+      if (!sectionRef.current || !ctaRef.current) return;
 
       const sectionRect = sectionRef.current.getBoundingClientRect();
+      const ctaRect = ctaRef.current.getBoundingClientRect();
       const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
       const windowHeight = window.innerHeight;
 
-      // More precise line progress calculation
+      // Calculate line progress to stop at CTA top
       let scrollProgress = 0;
       
       if (sectionTop <= windowHeight * 0.8) {
         const scrolledIntoView = (windowHeight * 0.8 - sectionTop);
-        const totalScrollDistance = sectionHeight + (windowHeight * 0.8);
+        const ctaTopRelativeToSection = ctaRect.top - sectionRect.top;
+        const maxLineHeight = ctaTopRelativeToSection;
+        const totalScrollDistance = maxLineHeight + (windowHeight * 0.4);
         scrollProgress = Math.min(1, Math.max(0, scrolledIntoView / totalScrollDistance));
       }
-      
 
-      
       // Smooth line animation with easing
-      const easedProgress = scrollProgress * scrollProgress * (3 - 2 * scrollProgress); // Smoothstep easing
+      const easedProgress = scrollProgress * scrollProgress * (3 - 2 * scrollProgress);
       
       if (lineRef.current) {
         lineRef.current.style.height = `${easedProgress * 100}%`;
@@ -107,6 +110,10 @@ const TimelineSection = () => {
         }
       });
 
+      // CTA visibility
+      const ctaMiddle = ctaRect.top + ctaRect.height / 2;
+      setCtaVisible(ctaMiddle < windowHeight * 0.9);
+
       setVisibleCards(newVisibleCards);
       setActiveCircles(newActiveCircles);
     };
@@ -136,14 +143,12 @@ const TimelineSection = () => {
           <h2 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-hero-silver-yellow">
             Your Journey to Success
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Follow the proven path that has helped hundreds of students become professional video editors
-          </p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* Center Line - Desktop: positioned at column 5 (50%) */}
-          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border/50 overflow-hidden z-0 rounded-full">
+          {/* Center Line - Desktop: stops at CTA top */}
+          <div className="hidden lg:block absolute left-1/2 top-0 w-1 -translate-x-1/2 bg-border/50 overflow-hidden z-0 rounded-full"
+               style={{ height: ctaRef.current ? `${ctaRef.current.offsetTop}px` : '100%' }}>
             <div 
               ref={lineRef}
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/70 shadow-[0_0_10px_rgba(255,215,0,0.5)] rounded-full"
@@ -151,8 +156,9 @@ const TimelineSection = () => {
             />
           </div>
 
-          {/* Left Line - Mobile */}
-          <div className="lg:hidden absolute left-6 top-0 bottom-0 w-1 bg-border/50 overflow-hidden z-0 rounded-full">
+          {/* Left Line - Mobile: stops at CTA top */}
+          <div className="lg:hidden absolute left-6 top-0 w-1 bg-border/50 overflow-hidden z-0 rounded-full"
+               style={{ height: ctaRef.current ? `${ctaRef.current.offsetTop}px` : '100%' }}>
             <div 
               ref={mobileLineRef}
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-primary to-primary/70 shadow-[0_0_8px_rgba(255,215,0,0.4)] rounded-full"
@@ -245,6 +251,60 @@ const TimelineSection = () => {
                 </div>
               );
             })}
+
+            {/* CTA Section - Terminal endpoint of timeline */}
+            <div 
+              ref={ctaRef}
+              className={`-mt-6 lg:mt-20 transform transition-all duration-700 ${
+                ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              {/* Mobile CTA - Connected directly to last timeline item */}
+              <div className="lg:hidden flex items-start gap-6">
+                {/* Mobile connection point - aligned with top of CTA card */}
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-background border-4 border-primary flex items-center justify-center shadow-[0_0_25px_rgba(255,215,0,0.8)] z-20 mt-0">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  </div>
+                </div>
+                
+                {/* Mobile CTA Box - starts at same level as circle */}
+                <div className="flex-1 bg-gradient-to-br from-card/90 to-card/95 border-2 border-primary/30 rounded-2xl p-6 backdrop-blur-sm shadow-[0_0_30px_rgba(255,215,0,0.15)] mt-0">
+                  <h3 className="text-xl font-bold gradient-text-hero-silver-yellow mb-3">Ready to Start Your Journey?</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">Join our masterclass and transform your video editing skills today.</p>
+                  <LoadingButton 
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all duration-300"
+                    href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Reserve Your Seat
+                  </LoadingButton>
+                </div>
+              </div>
+
+              {/* Desktop CTA - Center aligned with timeline */}
+              <div className="hidden lg:grid lg:grid-cols-9 lg:gap-0 lg:items-center">
+                <div className="lg:col-start-3 lg:col-span-5">
+                  <div className="bg-gradient-to-br from-card/90 to-card/95 border-2 border-primary/30 rounded-2xl p-8 backdrop-blur-sm shadow-[0_0_30px_rgba(255,215,0,0.15)] text-center relative">
+                    {/* Connection indicator at top center */}
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary shadow-[0_0_15px_rgba(255,215,0,0.6)] animate-pulse" />
+                    
+                    <h3 className="text-2xl lg:text-3xl font-bold gradient-text-hero-silver-yellow mb-4">Ready to Start Your Journey?</h3>
+                    <p className="text-muted-foreground mb-6 text-lg max-w-md mx-auto">Join our masterclass and transform your video editing skills today.</p>
+                    <LoadingButton 
+                      size="lg"
+                      className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all duration-300 hover:scale-105"
+                      href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Reserve Your Seat
+                    </LoadingButton>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const HeroSection = () => {
           </div>
 
           <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed hover:text-foreground/80 transition-colors duration-300 cursor-default">
-            <span className="inline-block hover:scale-105 transition-transform duration-200">Transform your skills</span>, <span className="inline-block hover:scale-105 transition-transform duration-200">advance your career</span>, and <span className="inline-block hover:scale-105 transition-transform duration-200">achieve your goals</span> with our comprehensive learning platform.
+            Join our free offline masterclass in Mohali. Limited to 15 seats only gain complete clarity before you begin.
           </p>
 
           {/* Seats Progress Bar */}

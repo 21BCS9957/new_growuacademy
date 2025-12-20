@@ -31,9 +31,6 @@ const WhyJoinSection = () => {
           <h2 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-hero-silver-yellow">
             Why Choose GrowU Academy?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Join thousands of successful students who have transformed their careers with our proven methodology
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

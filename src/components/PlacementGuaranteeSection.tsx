@@ -15,11 +15,6 @@ const PlacementGuaranteeSection = () => {
             <br />Guarantee
           </h2>
           
-          <p className="text-2xl text-muted-foreground mb-12 leading-relaxed">
-            We're so confident in our training that we guarantee job placement. 
-            If you don't get placed within 6 months, we'll refund your entire fee.
-          </p>
-          
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
               <TrendingUp className="w-12 h-12 text-primary mx-auto mb-4" />
