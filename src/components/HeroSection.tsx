@@ -7,7 +7,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 const HeroSection = () => {
   const heroRef = useScrollAnimation({ threshold: 0.1 });
   const contentRef = useScrollAnimation({ threshold: 0.2 });
-
+ 
   return (
     <section ref={heroRef as any} className="relative container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-24 overflow-hidden">
       <ParticleBackground />
@@ -21,7 +21,7 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed hover:text-foreground/80 transition-colors duration-300 cursor-default">
+          <p className="text-lg sm:text-xl lg:text-2xl gradient-text-hero-silver-yellow max-w-2xl mx-auto leading-relaxed hover:text-foreground/80 transition-colors duration-300 cursor-default">
             Join our free offline masterclass in Mohali. Limited to 15 seats only gain complete clarity before you begin.
           </p>
 
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <div className="flex justify-center">
             <LoadingButton 
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base sm:text-lg px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 rounded-full w-full sm:w-auto hover:scale-105 shadow-[0_0_18px_rgba(255,215,0,0.25)] hover:shadow-[0_0_28px_rgba(255,215,0,0.45)] focus:shadow-[0_0_28px_rgba(255,215,0,0.45)] active:shadow-[0_0_28px_rgba(255,215,0,0.45)] transition-all duration-300 ease-out"
@@ -62,17 +62,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Start Learning Today
-            </LoadingButton>
-            <LoadingButton 
-              variant="outline" 
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-base sm:text-lg px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 rounded-full w-full sm:w-auto hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition-all duration-300 ease-out hover:border-primary/50"
-              href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Book Demo
+              Book Your Slot
             </LoadingButton>
           </div>
 

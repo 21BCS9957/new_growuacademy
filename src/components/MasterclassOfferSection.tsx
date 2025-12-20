@@ -11,7 +11,7 @@ const MasterclassOfferSection = () => {
               Offline Masterclass
               <br />Practical & Most Effective
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground">
+            <p className="text-lg sm:text-xl gradient-text-hero-silver-yellow">
               Transform your video editing skills in just 2 hours with hands-on training
             </p>
           </div>

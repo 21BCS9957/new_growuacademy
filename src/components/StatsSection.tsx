@@ -27,7 +27,7 @@ const StatsSection = () => {
               <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black gradient-text-hero-silver-yellow mb-2">
                 {stat.number}
               </div>
-              <p className="text-muted-foreground font-medium text-xs sm:text-sm lg:text-base uppercase tracking-wider">
+              <p className="gradient-text-hero-silver-yellow font-medium text-xs sm:text-sm lg:text-base uppercase tracking-wider">
                 {stat.label}
               </p>
             </div>
