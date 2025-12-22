@@ -141,7 +141,7 @@ const TimelineSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black mb-6 gradient-text-hero-silver-yellow">
-            Your Journey to Success
+            Key benefits of this masterclass
           </h2>
         </div>
 
