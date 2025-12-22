@@ -58,7 +58,7 @@ const HeroSection = () => {
             <LoadingButton 
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base sm:text-lg px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 rounded-full w-full sm:w-auto hover:scale-105 shadow-[0_0_18px_rgba(255,215,0,0.25)] hover:shadow-[0_0_28px_rgba(255,215,0,0.45)] focus:shadow-[0_0_28px_rgba(255,215,0,0.45)] active:shadow-[0_0_28px_rgba(255,215,0,0.45)] transition-all duration-300 ease-out"
-              href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+              href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
               target="_blank"
               rel="noopener noreferrer"
             >

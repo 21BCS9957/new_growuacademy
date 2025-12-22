@@ -85,7 +85,7 @@ const MasterclassOfferSection = () => {
                 <LoadingButton 
                   size="lg"
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base sm:text-lg py-4 sm:py-6 rounded-full mt-6 sm:mt-8"
-                  href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+                  href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

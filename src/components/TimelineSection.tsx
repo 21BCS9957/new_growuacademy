@@ -274,7 +274,7 @@ const TimelineSection = () => {
                   <p className="text-muted-foreground mb-4 text-sm">Join our masterclass and transform your video editing skills today.</p>
                   <LoadingButton 
                     className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all duration-300"
-                    href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+                    href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -295,7 +295,7 @@ const TimelineSection = () => {
                     <LoadingButton 
                       size="lg"
                       className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all duration-300 hover:scale-105"
-                      href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+                      href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

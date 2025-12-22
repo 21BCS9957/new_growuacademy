@@ -122,7 +122,7 @@ const UrgencyBanner = () => {
           <LoadingButton 
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-sm sm:text-base px-6 sm:px-6 py-2 sm:py-3 rounded-full whitespace-nowrap w-full sm:w-auto"
-            href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+            href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
             target="_blank"
             rel="noopener noreferrer"
           >

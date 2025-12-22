@@ -67,7 +67,7 @@ const WelcomePopup = () => {
         <div className="px-6 pb-6">
           <LoadingButton
             className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 hover:from-yellow-500 hover:to-orange-500 text-black font-bold py-4 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+            href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -19,7 +19,7 @@ const CTABanner = () => {
             size="lg"
             variant="secondary"
             className="bg-background text-foreground hover:bg-background/90 font-bold px-8 py-3 rounded-full whitespace-nowrap"
-            href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+            href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
             target="_blank"
             rel="noopener noreferrer"
           >

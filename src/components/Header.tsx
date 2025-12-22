@@ -21,7 +21,7 @@ const Header = () => {
         <LoadingButton 
           size="lg" 
           className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-semibold px-4 sm:px-6 lg:px-8 py-2 lg:py-3 text-xs sm:text-sm lg:text-base shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          href="https://growumedia.notion.site/232ffe2f0dd98051a031cc204a646383?pvs=105"
+          href="https://growumedia.notion.site/2d1ffe2f0dd980318713c3effba1f4b6?pvs=105"
           target="_blank"
           rel="noopener noreferrer"
         >
